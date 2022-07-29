@@ -1,0 +1,332 @@
+/* head */
+.head{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    border-bottom: 2px white solid;
+}
+.head-1{
+    flex: 1;
+    padding: 2px 5px 2px 20px;
+    display: flex;
+    align-items: center;
+}
+.head-1 .logo{
+    width: 70px;
+    height: 30px;
+}
+.head-1 .head-tag{
+    margin: 0 15px;
+    align-items: center;
+    cursor: pointer;
+}
+.head-1 .head-tag h5:hover{
+    background-color: #4c497e;
+    padding: 2px 5px;
+}
+.head-2{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-3{
+    flex: 1;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.head-3 h5{
+    cursor: pointer;
+}
+.head-3 h5:hover{
+    color: red;
+}
+.view-elements{
+    position: absolute;
+    top: 30px;
+    box-sizing: border-box;
+    border: 0.5px solid white;
+    word-wrap: break-word;
+    background-color: #2d3748;
+    width: 150px;
+    border-radius: 5px;
+    z-index: 999;
+}
+.view-elements li{
+    padding: 3px 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    margin-left: -39px;
+    padding: 7px 17px 7px 21px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.view-elements li:hover{
+    background-color: #6272a4;
+}
+
+
+
+/* sidebar */
+.dndflow {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.dndflow aside {
+    border-right: 1px solid #eee;
+    padding: 15px 10px;
+    font-size: 12px;
+    background: #1a202c;
+    z-index: 1;
+    color: white;
+}
+
+.dndflow .dndnode {
+    height: 20px;
+    padding: 4px;
+    border: 1px solid #1a192b;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+
+.dndflow .reactflow-wrapper {
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  .dndflow .selectall {
+    margin-top: 10px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .dndflow {
+      flex-direction: row;
+    }
+  
+    .dndflow aside {
+      width: 20%;
+      max-width: 250px;
+    }
+}
+
+.dndnode{
+    padding: 7px 3px 7px 10px;
+    cursor: pointer;
+    margin: 3px 0;
+    border-radius: 5px;
+
+}
+.search{
+    padding: 5px 5px;
+    background: #1a202c;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.search::backdrop{
+    border: 2px solid blue;
+}
+
+
+
+/* fileNode */
+.fileNode{
+    background-color: #1a202c;
+    height: 100px;
+    width: 100px;
+    padding: 10px 34px;
+    margin-left: -5px;
+    border: 1px solid #333154;
+}
+.touchdevice-flow .react-flow__handle-left {
+    width: 12px;
+    height: 15px;
+    border-radius: 3px;
+    background-color: #333154;
+    top: 18px;
+    left: -12px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    border: none;
+}
+.touchdevice-flow .react-flow__handle-right {
+    width: 15px;
+    height: 122px;
+    top: 20px;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #333154;
+    border: none;
+    right: -15px;
+}
+
+.inputHandleOther{
+    width: 15px !important;
+    height: 122px !important;
+    top: 20px !important;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #333154;
+    border: none;
+    right: -15px;
+}
+
+.touchdevice-flow 
+.react-flow__handle-right:hover,
+.react-flow__handle-left:hover{
+    background-color: rgb(104,102,172);
+}
+.buttonfile:hover{
+    background-color: rgb(104,102,172);
+    color: white;
+}
+.inputhttp{
+    width: 146px;
+    border: none;
+    border-radius: 3px;
+}
+.inputhttp:focus{
+    outline: none;
+    z-index: 1;
+    border-color: rgb(99, 179, 237);
+    box-shadow: rgb(99 179 237) 0px 0px 0px 1px;
+}
+
+.deleteNode:hover{
+    color: red;
+}
+
+.menu-title{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: -40px;
+}
+.menu-title h4{
+    margin-left: 10px;
+}
+
+.option-filter{
+    color: white;
+    font-size: 11px;
+}
+
+
+/* bottom */
+.bottom{
+    display: flex;
+}
+.bottom .tt-bottom{
+    border: 1px solid rgb(104,102,172);
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    line-height: 1;
+}
+.bottom-left{
+    flex: 2.2;
+}
+.bottom-right{
+    flex: 1;
+}
+.bottom 
+.output,
+.logs{
+    border: 1px solid rgb(104,102,172);
+    height: 175px;
+    padding: 5px;
+}
+
+/* Table */
+.container{
+    padding: 0.5rem;
+  }
+.table-scroll{
+/*width:100%; */
+display: block;
+empty-cells: show;
+}
+
+.table-scroll thead{
+    background-color: #f1f1f1;  
+    position:relative;
+    display: block;
+    width:100%;
+}
+
+.table-scroll tbody{
+/* Position */
+    display: block; 
+    position:relative;
+    width:100%; 
+    overflow-y:scroll;
+    height: 175px;
+/* Decoration */
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.table-scroll tr{
+width: 100%;
+display:flex;
+}
+
+.table-scroll td,.table-scroll th{
+    flex-basis:100%;
+    flex-grow:2;
+    display: block;
+    padding: 0.5rem;
+    text-align:left;
+}
+
+/* Other options */
+
+.table-scroll.small-first-col td:first-child,
+.table-scroll.small-first-col th:first-child{
+    flex-basis:20%;
+    flex-grow:1;
+}
+
+.table-scroll tbody tr:nth-child(2n){
+background-color: rgba(130,130,170,0.1);
+}
+
+.body-half-screen{
+}
+
+.small-col{flex-basis:10%;}
+
+.export-Container{
+
+}
+
+.button-export{
+    background-color: #333154;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 10px;
+    width: 100%;
+    padding: 8px 15px;
+    margin-top: 10px;
+}
+.button-export:hover{
+    background-color: #4c497e;
+}
