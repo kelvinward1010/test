@@ -5,6 +5,7 @@ import Head from './components/Head';
 import Home from './pages/Home';
 import Bottom from './components/Bottom';
 import HomeComponent from './components/container/TestFile';
+import OtherTest from './pages/OtherTest';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Home />
       <Bottom />
       {/* <HomeComponent /> */}
+      
     </div>
   );
 }

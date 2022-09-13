@@ -1,57 +1,39 @@
 import React, { useState } from 'react';
-import * as XLSX from 'xlsx';
+import { read, utils, writeFile } from 'xlsx';
 
 function ReadCsvAndXLSX({fn}) {
 
-    const [datas,setData] = useState([]);
+    const [data, setData] = useState([]);
+    const [error, setError] = useState('');
 
-    const [error, setError] = useState('')
+    const handleImport = (e) => {
+        const files = e.target.files;
+        if (files.length) {
+            const file = files[0];
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const wb = read(event.target.result);
+                const sheets = wb.SheetNames;
 
-    var file = document.getElementById('fileButton')
-    file?.addEventListener('change', importFile);
-    
-    function importFile(evt) {
-        var f = evt.target.files[0];
-    
-        if (f) {
-        var r = new FileReader();
-        r.onload = e => {
-            var contents = processExcel(e.target.result);
-            console.log(contents)
-        }
-        r.readAsBinaryString(f);
-        } else {
-            console.log("Failed to load file");
+                if (sheets.length) {
+                    const rows = utils.sheet_to_json(wb.Sheets[sheets[0]]);
+                    setData(rows)
+                }
+            }
+            reader.readAsArrayBuffer(file);
+        }else{
+            setError('None File')
         }
     }
-    
-    function processExcel(data) {
-        var workbook = XLSX.read(data, {
-        type: 'binary'
-        });
-        var data = to_json(workbook);
-        return data
-    };
-    
-    function to_json(workbook) {
-        var result = {};
-        workbook.SheetNames.forEach(function(sheetName) {
-            var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
-                header: 1
-            });
-            if (roa.length) result[sheetName] = roa;
-        });
-        return JSON.stringify(result, 2, 2);
-    };
 
-    console.log(file)
+    console.log(data)
     
     return (
         <>
             <div
                 style={{
                     display:"flex",
-                    flexDirection:"column"
+                    flexDirection:"column",
                 }}
             >
                 <button
@@ -64,6 +46,8 @@ function ReadCsvAndXLSX({fn}) {
                         color: "white",
                         cursor: "pointer",
                         padding: "5px 5px",
+                        zIndex:'100',
+                        position: 'absolute'
                     }}
                     onClick={fn}
                 >
@@ -71,7 +55,7 @@ function ReadCsvAndXLSX({fn}) {
                     <input 
                         id="fileButton" 
                         type="file" 
-                        onChange={importFile}
+                        onChange={handleImport}
                         hidden 
                         name={'file'}
                     />

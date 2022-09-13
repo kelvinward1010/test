@@ -89,9 +89,8 @@ function ExportNode({isConnectable}) {
         link.href = jsonString;
         link.download = "data.json";
         link.click();
+        console.log(jsonString)
     }
-
-    console.log(data);
 
     return (
         <div

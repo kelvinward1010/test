@@ -16,6 +16,7 @@ function Node({title,content, isConnectable, deleteNode}) {
         reactFlowInstance.setNodes((nds) =>nds.filter((nd) => !!nd.id && !nd.selected))
     }
 
+
     // const deleteNodeById = (id) => {
     //     reactFlowInstance.setNodes(nds => nds.filter(node => node.id !== id));
     // };
@@ -29,7 +30,7 @@ function Node({title,content, isConnectable, deleteNode}) {
                 width:"160px",
             }}
             className="clicknode"
-        >
+        > 
             <Handle
                 type='target'
                 position='left'

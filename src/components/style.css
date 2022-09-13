@@ -330,3 +330,24 @@ background-color: rgba(130,130,170,0.1);
 .button-export:hover{
     background-color: #4c497e;
 }
+
+.value-Pasted{
+    width: 145px;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    position: relative;
+    appearance: none;
+    height: 40px;
+    background-color: #1a202c;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-top: 3px;
+    font-size: 7px;
+}
+.value-Pasted:focus{
+    outline: none;
+    z-index: 1;
+    border-color: rgb(99, 179, 237);
+    box-shadow: rgb(99 179 237) 0px 0px 0px 1px;
+}

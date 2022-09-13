@@ -22,6 +22,7 @@ import SliceNode from '../components/nodes/SliceNode';
 import ExampleDataNode from '../components/nodes/ExampleDataNode';
 import CustomEdge from '../components/container/CustomEdge';
 import ExportNode from '../components/nodes/ExportNode';
+import PasteNode from '../components/nodes/PasteNode';
 
 
 export const initialNodes = [
@@ -45,6 +46,7 @@ const nodeTypes = {
     sliceNode: SliceNode,
     exampleDataNode: ExampleDataNode,
     exportNode: ExportNode,
+    pasteNode: PasteNode,
 }
 
 const edgeTypes = {
@@ -113,11 +115,11 @@ function Home() {
             id: getId(),
             type,
             position,
-            className: className,
-            data: { label: type, onDelete: deleteNodeById },
             sourcePosition: Position.Right,
             targetPosition: Position.Left,
-        };
+            dragHandle: ".custom-drag-handle",
+            data: {},
+          };
 
         setNodes((nds) => nds.concat(newNode));
         },

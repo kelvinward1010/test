@@ -29,11 +29,6 @@ function FileNode({isConnectable}) {
                             alignItems:"center"
                         }}
                     >
-                        <p style={{
-                            fontSize:"7px",
-                            opacity:"0.7",
-                            flex:"1"
-                        }}>Drop file here or</p>
                         {/* <ChooseFile funtion={fileUploadButton}/> */}
                         <ReadCsvAndXLSX fn={fileUploadButton}/>
                     </div>

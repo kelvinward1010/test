@@ -8,11 +8,12 @@ function Sidebar() {
 
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData('application/reactflow', nodeType);
-    event.dataTransfer.setData("nodeName", event.target.firstChild.nodeValue);
-    event.dataTransfer.setData("className", event.target.className);
     event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', event.target.id)
+    const img = new Image();
+    img.src= '../img/testdrag.png';
+    event.dataTransfer.setDragImage(img, 10, 10);
   };
-
 
   return (
     <aside>
@@ -32,10 +33,19 @@ function Sidebar() {
           <div 
             style={{marginLeft:"-40px"}}
             className='dndnode input'
+            id="source"
             onDragStart={(event) => onDragStart(event, 'fileNode')} 
             draggable
           >
             <p style={{fontSize:"15px",fontWeight:"600", opacity:"0.7"}}>File</p>
+          </div>
+          <div 
+            style={{marginLeft:"-40px"}}
+            className='dndnode input'
+            onDragStart={(event) => onDragStart(event, 'pasteNode')} 
+            draggable
+          >
+            <p style={{fontSize:"15px",fontWeight:"600", opacity:"0.7"}}>Paste</p>
           </div>
           <div 
             style={{marginLeft:"-40px"}}
